@@ -11,14 +11,15 @@ import { createContext, useEffect, useState } from "react";
 import { auth } from "../Firebase/firebase.init";
 import PropTypes from "prop-types";
 
-// Create a context for Auth
+
+
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const googleProvider = new GoogleAuthProvider();
   const [user, setUser] = useState(null);
-  const [reload, setReload] = useState(false); // Optional reload state
-  const [loading, setLoading] = useState(true); // Loading state to manage initial load
+  const [reload, setReload] = useState(false); 
+  const [loading, setLoading] = useState(true); 
 
   // Function to create a new user
   const createUser = async (email, password) => {
